@@ -1,0 +1,46 @@
+
+  <h1 align="center">Carrinho de Compras</h1>
+  
+  
+<form ngForm name="cadastro" class="form">
+   
+    nome Produto: <input type="text" name="titulo" [(ngModel)]="nome" class="nome"><br/>
+    Quantidadte: <input type="text" name="titulo" [(ngModel)]="quantidade" class="quantidade"><br/>
+    Preço: <input type="text" name="titulo" [(ngModel)]="preco" class="preco"><br/>
+    <button (click)="addProduto()" class="butoon">   Adicionar</button>
+
+    
+    
+</form>
+
+<table align="center" class="table">
+
+    <tr>
+        <h2>Produtos</h2>
+    
+    <ul *ngFor=" let produto of produtos">
+        <td>
+            <tr>
+            {{produto.nome}}   {{produto.preco}}R$ 
+           <td><button (click)="adicionarCarrinho(produto)" name="produto" class="butoon"> ADD Carrinho</button></td> </tr><br/>
+        </td>
+    </ul>
+        
+        <br/><td>nome</td><td>quantidade</td><td>preço</td>
+        <tr *ngFor="let car of carrinho">
+
+            <td>{{car.nome}} </td><td>{{car.quantidade}}</td><td>{{car.preco}}</td>
+        </tr>
+
+        
+    
+    <h4>Total da Compra {{calcular()}}</h4>
+    
+
+</table>
+  
+
+            
+        
+       
+ 
